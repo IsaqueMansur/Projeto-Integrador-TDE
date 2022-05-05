@@ -21,4 +21,6 @@ route.get('/publicar/index', loginRequired, publicarController.index);
 /* route.post('/publicar/publicar', loginRequired, publicarController.publicar); */
 
 
+
+
 module.exports = route;
