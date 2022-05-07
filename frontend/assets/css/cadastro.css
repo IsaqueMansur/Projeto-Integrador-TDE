@@ -73,6 +73,14 @@ body {
     border: none;
     margin-top: 1rem;
 }
+.btn2 {
+    background-color: #22262a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    align-self: center;
+    border: 1px solid;
+    cursor: pointer;
+}
 .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
@@ -149,7 +157,7 @@ body {
 }
 input:-webkit-autofill 
 {    
-    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-boxshadow: 0 0 0px 1000px #ecf0f1 inset !important;
     -webkit-text-fill-color: #000 !important;
 }
 .label-input {
