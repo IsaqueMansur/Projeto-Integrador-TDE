@@ -163,3 +163,21 @@
 .positive {
     color: rgb(40, 187, 40);
 }
+
+@media screen and (max-width : 1300px){
+    .carousel__item {
+        font-size: 1.05em;
+      }
+      .money{
+        display: none;
+      }
+    }
+@media screen and (max-width : 750px){
+
+    .carousel__item {
+        flex-direction: column;
+      }
+      .money{
+          font-size: 20px;
+      }
+}
