@@ -108,11 +108,6 @@
     color: white;
   }
   
-
-
-
-
-
 .container {
     padding: 10px;
     background-color: white;
@@ -131,7 +126,7 @@
 }
 
 .news-article{
-    display: flex;
+    display: block;
 }
 
 .news-img{
