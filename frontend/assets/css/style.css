@@ -126,7 +126,7 @@
 }
 
 .news-article{
-    display: block;
+    display: flex;
 }
 
 .news-img{
