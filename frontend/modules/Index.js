@@ -32,9 +32,9 @@ export default class Index {
       const width = list.offsetWidth;
       let x = 0;
       let x2 = width;
-      
     
       function clone() {
+        console.log(list.offsetWidth);
         list2 = list.cloneNode(true);
         carouselSlider.appendChild(list2);
         list2.style.left = `${width}px`;
