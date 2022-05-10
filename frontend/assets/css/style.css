@@ -90,13 +90,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 20%;
+    min-width: 25%;
     height: 40px;
     box-sizing: border-box;
     cursor: pointer;
     color: white;
   }
-
+  
   .carousel__item span {
     font-size: 0.8em;
     margin-left: 4%;
