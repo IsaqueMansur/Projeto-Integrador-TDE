@@ -25,16 +25,23 @@ export default class Index {
       let carouselSlider = document.querySelector(".carousel__slider");
       let list = document.querySelector(".carousel__list");
       let item = document.querySelectorAll(".carousel__item");
+      let tamanho = 0;
+
+      for (let i in item) {
+        if (item[i].offsetWidth) {
+          tamanho += item[i].offsetWidth;
+        };     
+      }
       let list2;
     
       const speed = .5;
     
-      const width = list.offsetWidth;
+      const width = tamanho;
+      console.log(width);
       let x = 0;
       let x2 = width;
     
       function clone() {
-        console.log(list.offsetWidth);
         list2 = list.cloneNode(true);
         carouselSlider.appendChild(list2);
         list2.style.left = `${width}px`;
@@ -53,7 +60,7 @@ export default class Index {
       function moveSecond() {
         x2 -= speed;
     
-        if (list2.offsetWidth >= Math.abs(x2)) {
+        if (tamanho >= Math.abs(x2)) {
           list2.style.left = `${x2}px`;
         } else {
           x2 = width;
