@@ -1,4 +1,4 @@
-export default class Index {
+export default class Eventos {
     init() {
         try {
             let newArticle = document.querySelector(".news-article");
