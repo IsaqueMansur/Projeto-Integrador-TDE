@@ -107,5 +107,29 @@ export default class Eventos {
       document.querySelector("#infoFlex").href = "/";
       document.querySelector(".d-flex").remove();
       document.querySelector("#cadastroColunista").remove();
+      this.eventosPreRender()
+    }
+    eventosPreRender() {
+      const titulo = document.querySelector(".titleNotice");
+      const img = document.querySelector(".imgPreNotice");
+      const texto = document.querySelector(".textoNotice");
+      const tituloPreRender = document.querySelector(".titlePreRender");
+      const imgPreRender = document.querySelector(".imgPreRender");
+      const textPreRender = document.querySelector(".textPreRender");
+      document.querySelector("#formCriaNoticia").addEventListener('keyup', e => {
+        const target = e.target;
+        console.log(imgPreRender.src);
+        
+        if (target.classList[1] == "titleNotice") {
+          tituloPreRender.textContent = target.value;
+        }
+        if (target.classList[1] == "imgNotice") {
+          imgPreRender.src = target.value;
+        }
+        if (target.classList[1] == "textNotice") {
+          textPreRender.textContent = target.value;
+        }
+        
+      } )
     }
 }     

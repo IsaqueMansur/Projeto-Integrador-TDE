@@ -26,6 +26,12 @@
 .column {
     flex-direction: column;
 }
+.row {
+    flex-direction: row;
+}
+.metade {
+    width: 50%;
+}
 .nav-item .active:hover {
     background-color: var(--gray5);
 }
@@ -159,6 +165,15 @@
 .positive {
     color: rgb(40, 187, 40);
 }
+
+.cont {
+    width: 95%;
+    padding: 2% 5%;
+}
+.imgPreRender {
+    width: 100%;
+}
+
 
 @media screen and (max-width : 1400px){
     .carousel__item {

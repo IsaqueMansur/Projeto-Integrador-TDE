@@ -1,7 +1,30 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
-<div class="container" id="publicar">
-    
+<div class="cont flex row" id="publicar">
+    <div class="criarNoticia metade">
+        <form id="formCriaNoticia">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Título</label>
+              <input type="text" class="form-control titleNotice" id="exampleFormControlInput1" placeholder="Título" name="tituloMateria">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Link da imagem</label>
+                <input type="text" class="form-control imgNotice" id="exampleFormControlInput1" placeholder="Imagem" name="imgMateria">
+              </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Texto</label>
+              <textarea class="form-control textNotice" id="exampleFormControlTextarea1" rows="15"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="preRenderNoticia metade">
+        <h2 class="titlePreRender center"></h2>
+        <br>
+        <img class="imgPreRender center">
+        <br>
+        <br>
+        <p class="textPreRender center"></p>
+    </div>   
 </div>
-<h1 class="teste">VOCE ESTÁ NA PÁGINA DE PUBLICACAO</h1>
+
 <%- include('includes/footer') %>
