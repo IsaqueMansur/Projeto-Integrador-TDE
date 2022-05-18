@@ -6,7 +6,6 @@ exports.index = (req, res) => {
 }
 
 exports.register = async (req, res) => {
-    console.log("fui chamado")
     try {
         const login = new Login(req.body);
         await login.register();

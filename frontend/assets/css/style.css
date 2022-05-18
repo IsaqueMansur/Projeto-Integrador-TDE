@@ -172,6 +172,9 @@
     width: 95%;
     padding: 2% 5%;
 }
+.textPreRender {
+    word-break: break-all;
+}
 .imgPreRender {
     width: 100%;
 }

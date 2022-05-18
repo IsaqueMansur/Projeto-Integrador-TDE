@@ -2,7 +2,7 @@
 <%- include('includes/nav') %>
 <div class="cont flex row" id="publicar">
     <div class="criarNoticia metade">
-        <form id="formCriaNoticia">
+        <form id="formCriaNoticia"  action="/publicar/publicar" method="POST">
             <div class="form-group">
               <label for="exampleFormControlInput1">Título</label>
               <input type="text" class="form-control titleNotice" id="exampleFormControlInput1" placeholder="Título" name="tituloMateria">
@@ -15,8 +15,13 @@
               <label for="exampleFormControlTextarea1">Texto</label>
               <textarea class="form-control textNotice" id="exampleFormControlTextarea1" rows="15"></textarea>
             </div>
-        </form>
+            <div class="row mx-md-n5 center">
+              <button type="button" class="btn btn-danger mx-5 btn-lg">Cancelar</button>
+              <button type="submit" class="btn btn-success mx-5 btn-lg">Publicar</button>
+            </div>
+        </form>     
     </div>
+    
     <div class="preRenderNoticia metade">
         <h2 class="titlePreRender center"></h2>
         <br>
