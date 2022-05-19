@@ -1,13 +1,13 @@
-const Publicar = require('../models/PublicarModel');
+const Publicacao = require('../models/PublicarModel');
 
 exports.index = (req, res) => {
     res.render('publicar');
 }
 
 exports.publicar = async (req, res) => {
-    console.log("chamado");
+    
     try {
-        const publicacao = new Publicar(req.body);
+        const publicacao = new Publicacao(req.body);
         await publicacao.publicar();
 
     if (publicacao.errors.length > 0) {
