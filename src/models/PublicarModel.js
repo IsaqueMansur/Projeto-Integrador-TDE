@@ -15,7 +15,6 @@ class Publicacao {
         this.publicacao = null;
     }
 
-
     async publicar() {
         
         this.valida(this.body);
@@ -30,7 +29,7 @@ class Publicacao {
             publicacao.tituloMateria,
             publicacao.imgMateria,
             publicacao.textMateria
-        ]
+        ];
 
         for (let i in body) {
             if (body[i] == '')  {
@@ -39,7 +38,6 @@ class Publicacao {
                 if (i == 2) this.errors.push("Insira o texto !");
             }    
         }
-        console.log(body[2].length)
         if (body[2].length > 0 && body[2].length < 39) this.errors.push("O seu texto deve ter pelo menos 40 caracteres");
     }
 
@@ -47,14 +45,14 @@ class Publicacao {
         for (const key in this.body) {
             if (typeof this.body[key] !== 'string') {
                 this.body[key] = '';
-            }
-        }
+            };
+        };
 
         this.body = {
             tituloMateria: this.body.tituloMateria,
             imgMateria: this.body.imgMateria,
             textMateria: this.body.textMateria
-        }
+        };
     }
 }
 
