@@ -22,7 +22,7 @@ class Login {
         this.user = await LoginModel.findOne({email: this.body.email});
 
         if (!this.user) {
-            this.errors.push('Usuário não encontrado. Cadastre-se');
+            this.errors.push('Usuário não encontrado. Entre em contato com a admnistração');
             return
         }
 
