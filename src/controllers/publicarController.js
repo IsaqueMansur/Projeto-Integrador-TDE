@@ -5,7 +5,7 @@ exports.index = (req, res) => {
 }
 
 exports.publicar = async (req, res) => {
-    
+      
     try {
         const publicacao = new Publicacao(req.body);
         await publicacao.publicar();
@@ -15,8 +15,8 @@ exports.publicar = async (req, res) => {
         req.session.save(function() {
             return res.redirect('back');
         });
-        return
-    }
+        return;
+    };
 
     req.flash('success', 'Publicação feita com sucesso');
         req.session.save(function() {
@@ -26,5 +26,5 @@ exports.publicar = async (req, res) => {
     }catch(e) {
         console.log(e);
         return res.render('404');
-    }  
-}
+    };
+};
