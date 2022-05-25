@@ -63,55 +63,24 @@
 
       <section class="news">
         <% if (publicacoes.length > 0) {%> 
-          <% publicacoes.forEach(contato => { %>
-            <a href="###">
+          <% publicacoes.forEach(publicacoes => { %>
+            <a href="###" id="publiRenderizada">
               <article class="news-article row">
                 <div class="news-img">
-                  <img src=<%- publicacoes.imgMateria %>>
+                  <img src=<%=publicacoes.imgMateria %>>
                 </div>
                 <div class="news-main">
                   <h2 class="news-text">
                     <%= publicacoes.tituloMateria %>
                   </h2>
                   <p class="news-text-2">
-                    O principal índice de ações da bolsa brasileira subiu 0,54%, a 118.862 pontos.
+                    <%= publicacoes.subtituloMateria %>
                   </p>
                 </div>
               </article>
-            </a>
-                
+            </a>             
             <% }) %> 
           <% } %> 
-        <a href="###">
-          <article class="news-article row">
-            <div class="news-img">
-              <img src="https://vinteconto.sfo2.cdn.digitaloceanspaces.com/listings/260030/a0249bb77e864de75040cbf98b61e20d.jpg">
-            </div>
-            <div class="news-main">
-              <h2 class="news-text">
-                  Bovespa fecha em alta impulsionada por Petrobras e com suporte  de NY
-              </h2>
-              <p class="news-text-2">
-                O principal índice de ações da bolsa brasileira subiu 0,54%, a 118.862 pontos.
-              </p>
-            </div>
-          </article>
-        </a>
-        <a href="###">
-          <article class="news-article row">
-            <div class="news-img">
-              <img src="https://www.jornalbomdia.com.br/tb_noticias/7071/Brasil%20com%20imagem%204k%20at%C3%A9%202020.jpg">
-            </div>
-            <div class="news-main">
-              <h2 class="news-text">
-                  Bovespa fecha em alta impulsionada por Petrobras e com suporte  de NY
-              </h2>
-              <p class="news-text-2">
-                O principal índice de ações da bolsa brasileira subiu 0,54%, a 118.862 pontos.
-              </p>
-            </div>
-          </article>
-        </a>
       </section>  
     </div>
     <%- include('includes/footer') %>

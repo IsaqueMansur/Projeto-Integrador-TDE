@@ -110,10 +110,8 @@ export default class Eventos {
       this.eventosPreRender()
     }
     eventosPreRender() {
-      const titulo = document.querySelector(".titleNotice");
-      const img = document.querySelector(".imgPreNotice");
-      const texto = document.querySelector(".textoNotice");
       const tituloPreRender = document.querySelector(".titlePreRender");
+      const subtituloPreRender = document.querySelector(".subtitlePreRender");
       const imgPreRender = document.querySelector(".imgPreRender");
       const textPreRender = document.querySelector(".textPreRender");
       document.querySelector("#formCriaNoticia").addEventListener('keyup', e => {
@@ -121,6 +119,9 @@ export default class Eventos {
         
         if (target.classList[1] == "titleNotice") {
           tituloPreRender.textContent = target.value;
+        }
+        if (target.classList[1] == "subtitleNotice") {
+          subtituloPreRender.textContent = target.value;  
         }
         if (target.classList[1] == "imgNotice") {
           imgPreRender.src = target.value;

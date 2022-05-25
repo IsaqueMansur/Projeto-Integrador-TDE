@@ -127,12 +127,14 @@
 }
 
 .news{
-    width: 75%;
+    width: 85%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 15px;
 }
 .news a {
-    margin-top: 60px;
+    justify-content: center;
+    display: flex;
+    padding-top: 25px;
 }
 
 .news-article{
@@ -140,16 +142,18 @@
 }
 
 .news-img{
-    width: 40%;
-    height: 100%;
+    display: flex;
+    width: 450px;
+    height: 240px;
 }
 .news-img img {
     width: 100%;
 }
 
 .news-main{
-    right: 340px;
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
     padding: 20px;
     text-align: left;
 }
@@ -171,6 +175,9 @@
 .cont {
     width: 95%;
     padding: 2% 5%;
+}
+.subtitlePreRender {
+    word-break: break-all;
 }
 .textPreRender {
     word-break: break-all;

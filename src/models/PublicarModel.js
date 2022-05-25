@@ -4,6 +4,7 @@ const bcryptjs = require('bcryptjs');
 const { async } = require('regenerator-runtime');
 const PublicacoeSchema = new mongoose.Schema({
     tituloMateria: { type: String, required: true },
+    subtituloMateria: { type: String, required: true},
     imgMateria: { type: String, required: true },
     textMateria: { type: String, required: true },
     date: { type: String, required:  true},
