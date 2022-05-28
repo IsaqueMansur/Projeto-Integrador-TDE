@@ -64,7 +64,7 @@
       <section class="news">
         <% if (publicacoes.length > 0) {%> 
           <% publicacoes.forEach(publicacoes => { %>
-            <a href="###" id="publiRenderizada">
+            <a href="/publicacao/index/<%= publicacoes._id %>" id="publiRenderizada">
               <article class="news-article row">
                 <div class="news-img">
                   <img src=<%=publicacoes.imgMateria %>>

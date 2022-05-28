@@ -1,0 +1,69 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<section class="carousel">
+    <div class="carousel__slider flex">
+      <ul class="carousel__list">     
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="positive">5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="negative">-5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="positive">5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="negative">-5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="positive">5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="negative">-5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="positive">5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="negative">-5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="positive">5%</span>
+        </li>
+        <li class="carousel__item">
+          <span>PBT4</span>
+          <span class="money">R$25,50</span>
+          <span class="negative">-5%</span>
+        </li>      
+      </ul>
+    </div>
+  </section>
+  
+  <div class="container flex row center break">
+    <% if (publicacao._id) {%> 
+        <h1 class="break"><%=publicacao.tituloMateria  %> </h1>
+        <h3 class="break"><%=publicacao.subtituloMateria  %> </h3>
+        <img src="<%=publicacao.imgMateria  %>">
+        <p class="break"><%= publicacao.textMateria %> </p>
+        <% } %> 
+  </div>
+
+<%- include('includes/footer') %>

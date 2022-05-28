@@ -19,6 +19,7 @@ route.get('/login/logout', loginController.logout);
 //ROTAS PUBLICAR
 route.get('/publicar/index', loginRequired, publicarController.index);
 route.post('/publicar/publicar', loginRequired, publicarController.publicar);
+route.get('/publicacao/index/:id', publicarController.viewIndex);
 
 
 

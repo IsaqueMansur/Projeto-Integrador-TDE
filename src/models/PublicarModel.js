@@ -50,6 +50,12 @@ Publicacao.buscarPublicacoes = async function() {
     return publicacoes;
 }
 
+Publicacao.buscaPorId =  async (id) => {
+    if (typeof(id) !== 'string') return;
+    const publicacao = await PublicacaoModel.findById(id);
+    return publicacao;
+}
+
 
 
 

@@ -32,6 +32,9 @@
 .metade {
     width: 50%;
 }
+.break {
+    word-break: break-all;
+}
 .nav-item .active:hover {
     background-color: var(--gray5);
 }

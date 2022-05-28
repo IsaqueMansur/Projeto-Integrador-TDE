@@ -28,3 +28,11 @@ exports.publicar = async (req, res) => {
         return res.render('404');
     };
 };
+
+exports.viewIndex = async (req, res) => {
+    if (!req.params.id) return res.render('404');
+    const publicacao = await Publicacao.buscaPorId(req.params.id);
+
+    if (!publicacao) return res.render('404');
+    res.render('publicacao', { publicacao });
+}
