@@ -21,12 +21,14 @@ function Publicacao(body) {
 
 Publicacao.prototype.publicar = async function() {
     this.valida(this.body);
+    this.createDate();
     if (this.errors.length < 1) this.publicacao = await PublicacaoModel.create(this.body);
 }
 
 Publicacao.prototype.valida = async function(publicacao) {
     const body = [
         publicacao.tituloMateria,
+        publicacao.subtituloMateria,
         publicacao.imgMateria,
         publicacao.textMateria
     ];
@@ -34,14 +36,17 @@ Publicacao.prototype.valida = async function(publicacao) {
     for (let i in body) {
         if (body[i] == '')  {
             if (i == 0) this.errors.push("Insira um título !");
-            if (i == 1) this.errors.push("Insira uma imagem !");
-            if (i == 2) this.errors.push("Insira o texto !");
+            if (i == 1) this.errors.push("Insira um subtítulo !");
+            if (i == 2) this.errors.push("Insira uma imagem !");
+            if (i == 3) this.errors.push("Insira o texto !");
         }    
     }
-    if (body[2].length > 0 && body[2].length < 39) this.errors.push("O seu texto deve ter pelo menos 40 caracteres");
+    if (body[3].length > 0 && body[3].length < 39) this.errors.push("O seu texto deve ter pelo menos 40 caracteres");
+}
+
+Publicacao.prototype.createDate = function() {
     this.body.date = `${new Date().toLocaleDateString("pt-BR", {dateStyle: "short"})}`;
     this.body.hour = `${new Date().toLocaleTimeString("pt-BR", {timeStyle: "short"})}`;
-
 }
 
 Publicacao.buscarPublicacoes = async function() {
@@ -55,8 +60,5 @@ Publicacao.buscaPorId =  async (id) => {
     const publicacao = await PublicacaoModel.findById(id);
     return publicacao;
 }
-
-
-
 
 module.exports = Publicacao;

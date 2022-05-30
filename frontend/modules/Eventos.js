@@ -1,24 +1,22 @@
 export default class Eventos {
     init() {
         try {
-            let newArticle = document.querySelector(".news-article");
-            this.carousel();
-            return;
+          this.carousel();
         }catch(e) {}
 
         try {
-            let btnSignin = document.querySelector("#signin");
-              this.eventosLogin();
-              return;
+            this.eventosLogin();
+            return;
           }catch(e) {}
            
         try {
-          const local = document.querySelector("#publicar");
-          if (local) {
-            this.publicacao();
-            return
-          }         
-        } catch(e) {}          
+          this.publicacao();         
+        } catch(e) {} 
+        
+        try {
+          console.log("a");
+          this.alteraValoresCarrossel();
+        } catch(e) {}
     }
     carousel() {
       "use strict";
@@ -131,5 +129,15 @@ export default class Eventos {
         }
         
       } )
+    }
+
+    alteraValoresCarrossel() {
+      const listaValores = document.querySelectorAll(".money");
+      for (let i in listaValores) {
+        const fator = (Math.random * 10).toFixed(2);
+
+        console.log(listaValores[i].textContent)
+        listaValores[i].textContent = "teste"
+      }
     }
 }     
