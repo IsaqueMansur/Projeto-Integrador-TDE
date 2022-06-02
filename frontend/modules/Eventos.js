@@ -10,12 +10,12 @@ export default class Eventos {
           }catch(e) {}
            
         try {
-          this.publicacao();         
+          if (document.querySelector("#formCriaNoticia")) this.publicacao();         
         } catch(e) {} 
         
         try {
           console.log("a");
-          this.alteraValoresCarrossel();
+          this.identificaValoresCarrossel();
         } catch(e) {}
     }
     carousel() {
@@ -105,7 +105,7 @@ export default class Eventos {
       document.querySelector("#infoFlex").href = "/";
       document.querySelector(".d-flex").remove();
       document.querySelector("#cadastroColunista").remove();
-      this.eventosPreRender()
+      this.eventosPreRender();
     }
     eventosPreRender() {
       const tituloPreRender = document.querySelector(".titlePreRender");
@@ -131,13 +131,19 @@ export default class Eventos {
       } )
     }
 
-    alteraValoresCarrossel() {
+    identificaValoresCarrossel() {
       const listaValores = document.querySelectorAll(".money");
-      for (let i in listaValores) {
-        const fator = (Math.random * 10).toFixed(2);
-
-        console.log(listaValores[i].textContent)
-        listaValores[i].textContent = "teste"
-      }
-    }
+        for (let i in listaValores) {
+          let num = String(listaValores[i].textContent.replace(/\D/g, ','));
+          num = num.slice(2, 200).split(",", 200);
+          num = Number(parseFloat(`${num[0]}.${num[1]}`).toFixed(2));
+          this.novoValorCarrossel(listaValores[i], num);
+        };
+      };
+    novoValorCarrossel(item, num) {
+      let fator = parseInt(Math.random() * 1000);
+      fator = `1.0${fator}`; 
+      const novoNumero = Number(num * fator).toFixed(2);
+      item.textContent = `R$${novoNumero}`;
+    };
 }     
