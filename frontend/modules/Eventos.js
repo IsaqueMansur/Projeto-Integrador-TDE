@@ -14,7 +14,6 @@ export default class Eventos {
         } catch(e) {} 
         
         try {
-          console.log("a");
           this.identificaValoresCarrossel();
         } catch(e) {}
     }
@@ -35,7 +34,6 @@ export default class Eventos {
       const speed = .5;
     
       const width = tamanho;
-      console.log(width);
       let x = 0;
       let x2 = width;
     
@@ -107,7 +105,7 @@ export default class Eventos {
       document.querySelector("#cadastroColunista").remove();
       this.eventosPreRender();
     }
-    eventosPreRender() {
+    eventosPreRender() {k
       const tituloPreRender = document.querySelector(".titlePreRender");
       const subtituloPreRender = document.querySelector(".subtitlePreRender");
       const imgPreRender = document.querySelector(".imgPreRender");
@@ -144,6 +142,8 @@ export default class Eventos {
       let fator = parseInt(Math.random() * 1000);
       fator = `1.0${fator}`; 
       const novoNumero = Number(num * fator).toFixed(2);
+      let pctagem = (novoNumero - num);
+      pctagem = ((pctagem * 100) / num);
       item.textContent = `R$${novoNumero}`;
     };
 }     
