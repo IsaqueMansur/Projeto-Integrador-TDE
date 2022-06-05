@@ -104,7 +104,7 @@ export default class Eventos {
       document.querySelector("#cadastroColunista").remove();
       this.eventosPreRender();
     }
-    eventosPreRender() {k
+    eventosPreRender() {
       const tituloPreRender = document.querySelector(".titlePreRender");
       const subtituloPreRender = document.querySelector(".subtitlePreRender");
       const imgPreRender = document.querySelector(".imgPreRender");
