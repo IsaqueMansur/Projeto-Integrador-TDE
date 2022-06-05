@@ -111,7 +111,6 @@ export default class Eventos {
       const textPreRender = document.querySelector(".textPreRender");
       document.querySelector("#formCriaNoticia").addEventListener('keyup', e => {
         const target = e.target;
-        
         if (target.classList[1] == "titleNotice") {
           tituloPreRender.textContent = target.value;
         }
