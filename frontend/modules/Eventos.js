@@ -6,7 +6,6 @@ export default class Eventos {
 
         try {
             this.eventosLogin();
-            return;
           }catch(e) {}
            
         try {
