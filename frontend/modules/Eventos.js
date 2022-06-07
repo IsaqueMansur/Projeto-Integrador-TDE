@@ -122,8 +122,7 @@ export default class Eventos {
         }
         if (target.classList[1] == "textNotice") {
           textPreRender.textContent = target.value;
-        }
-        
+        }        
       } )
     }
 
