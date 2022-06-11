@@ -11,10 +11,14 @@ export default class Eventos {
         try {
           if (document.querySelector("#formCriaNoticia")) this.publicacao();         
         } catch(e) {} 
-        
         try {
-          this.identificaValoresCarrossel();
-        } catch(e) {}
+          setInterval(() => {
+            const qtd = document.querySelectorAll(".carousel__item").length;
+            this.identificaValoresCarrossel(qtd);
+          }, 15000)
+        } catch(e) {
+          console.log(e);
+        }
     }
     carousel() {
       "use strict";
@@ -73,8 +77,7 @@ export default class Eventos {
       }
      
       clone();
-        
-    
+           
       let a = setInterval(moveFirst, 10);
       let b = setInterval(moveSecond, 10);
     
@@ -96,6 +99,7 @@ export default class Eventos {
             body.className = "sign-up-js";
         }); 
     }
+    
 
     publicacao() {
       document.querySelector("#infoFlex").textContent = "Retornar";
@@ -126,21 +130,47 @@ export default class Eventos {
       } )
     }
 
-    identificaValoresCarrossel() {
+    identificaValoresCarrossel(quantidade) {
+      quantidade = quantidade / 2;
       const listaValores = document.querySelectorAll(".money");
         for (let i in listaValores) {
+          if (i >= quantidade) return;
+          const numeroClone = Number(i) + quantidade;
           let num = String(listaValores[i].textContent.replace(/\D/g, ','));
           num = num.slice(2, 200).split(",", 200);
           num = Number(parseFloat(`${num[0]}.${num[1]}`).toFixed(2));
-          this.novoValorCarrossel(listaValores[i], num);
+          this.novoValorCarrossel(listaValores[i], num, listaValores[numeroClone]);      
         };
       };
-    novoValorCarrossel(item, num) {
-      let fator = parseInt(Math.random() * 1000);
-      fator = `1.0${fator}`; 
-      const novoNumero = Number(num * fator).toFixed(2);
-      let pctagem = (novoNumero - num);
-      pctagem = ((pctagem * 100) / num);
-      item.textContent = `R$${novoNumero}`;
+    novoValorCarrossel(item, num, clone) {
+      const positivoOuNegativo = Math.random() * 10;
+      let avaliaPositivo;
+      let fator = parseInt(Math.random() * 1000);   
+      let novoNumero;
+      let pctagem;
+      if (positivoOuNegativo >= 5) { 
+        avaliaPositivo = true;    
+        fator = `1.0${fator}`; 
+        novoNumero = Number(num * fator).toFixed(2);  
+        pctagem = (novoNumero - num);
+        pctagem = ((pctagem * 100) / num).toFixed(2);
+        item.parentElement.childNodes[5].classList = "positive";
+        clone.parentElement.childNodes[5].classList = "positive";
+      } else {
+        fator = 1 - (fator / 10000);
+        novoNumero = (num * fator).toFixed(2);
+        pctagem = (novoNumero - num);
+        pctagem = ((pctagem * 100) / num).toFixed(2);
+        item.parentElement.childNodes[5].classList = "negative";
+        clone.parentElement.childNodes[5].classList = "negative";
+      }
+      item.textContent  = `R$${novoNumero}`;
+      clone.textContent = `R$${novoNumero}`;
+      item.parentElement.childNodes[5].textContent = `${pctagem}%`;
+      clone.parentElement.childNodes[5].textContent = `${pctagem}%`;
+      if (avaliaPositivo) {
+        item.parentElement.childNodes[5].textContent = `+${pctagem}%`;
+        clone.parentElement.childNodes[5].textContent = `+${pctagem}%`;
+      } 
     };
 }     
