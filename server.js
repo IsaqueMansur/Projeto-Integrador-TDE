@@ -53,7 +53,7 @@ app.use(csrfMiddleware);
 app.use(routes);
 
 app.on('pronto', () => {
-    app.listen(3000, () => {
-        console.log("servidor on http://localhost:3000");
+    app.listen(3002, () => {
+        console.log("servidor on http://localhost:3002");
     });
 })
